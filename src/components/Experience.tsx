@@ -41,8 +41,20 @@ const Experience: React.FC = () => {
         </ul>
       )}
       <div className="flex flex-wrap gap-1.5">
-        {item.tech.map((t) => (
-          <Tag key={t} value={t} className="!px-2 !py-0.5" />
+        {item.tech.map((t, index) => (
+          <motion.span
+            key={t}
+            initial={{ opacity: 0.75, scale: 0.96 }}
+            animate={{ opacity: [0.75, 1, 0.75], scale: [0.96, 1, 0.96] }}
+            transition={{
+              duration: 1.4,
+              repeat: Infinity,
+              delay: index * 0.08,
+              ease: "easeInOut",
+            }}
+          >
+            <Tag value={t} className="!px-2 !py-0.5" />
+          </motion.span>
         ))}
       </div>
     </motion.div>
