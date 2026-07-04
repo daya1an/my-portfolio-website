@@ -1,6 +1,6 @@
 export const profileData = {
   name: "Dayalan D.S.", //
-  role: "​Full Stack Engineer  •  Microservices  •  Cloud Architecture  •  DevSecOps •  AI/ML Integration  •  Big Data ",
+  role: "​Full Stack Engineer  •  Microservices  •  Cloud  •  DevSecOps •  AI/ML Integration  •  Big Data ",
   tagline:
     "A Full-Stack Engineer with 3 years of experience across the complete SDLC, specializing in distributed systems, microservices, and cloud‑native applications.",
   greeting: "Hello World! You gonna know about ...",
