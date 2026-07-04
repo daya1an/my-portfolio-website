@@ -43,7 +43,7 @@ const Education: React.FC = () => {
 
                 <ul className="mt-3 space-y-2">
                   {item.highlights.map((point, idx) => (
-                    <li key={idx} className="flex gap-2 text-sm text-muted-foreground">
+                    <li key={idx} className="flex gap-2 text-sm text-muted-foreground text-justify">
                       <span className="mt-1 text-foreground/50">•</span>
                       <span>{point}</span>
                     </li>
