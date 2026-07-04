@@ -13,35 +13,35 @@ export const projectsData: Project[] = [
     title: "GenAI REST Service",
     description: "A production-grade Spring Boot REST API integrating Google Gemini 2.5 Flash across seven AI use cases (text generation, summarization, Q&A, translation, code generation, analysis, and chat). Built with Redis caching, MySQL persistence, AOP-based audit logging, Resilience4j circuit breakers, rate limiting, input sanitization, and Prometheus metrics.",
     tech: ["Spring Boot", "Spring AI", "Gemini", "Redis", "Resilience4j", "Prometheus"],
-    featured: true,
+    featured: false,
     githubUrl: "https://github.com/daya1an/spring-genai",
   },
   {
-    title: "ECOMMERCE MEDALLION LAKEHOUSE",
+    title: "Ecommerce Medallion Lakehouse",
     description: "An ecommerce data engineering project on Databricks using the Medallion Architecture (Bronze → Silver → Gold). Raw CSV data across brands, products, customers, calendar, and order items is ingested and transformed across layered PySpark notebooks, producing BI-ready Delta tables with derived metrics (FX conversion, region enrichment, coupon flags).",
     tech: ["Python", "Pyspark","SQL", "Databricks", "AWS S3", "Power BI"],
-    featured: true,
+    featured: false,
     githubUrl: "https://github.com/daya1an/ecommerce-medallion-lakehouse"
   },
   {
     title: "Transportation Data Lakehouse",
-    description: "- A scalable Medallion data lakehouse on Databricks for a ride-hailing service, processing massive volumes of trips, city, and calendar data from AWS S3 to enable granular, city-level business intelligence and operational analytics across India.",
+    description: "A scalable Medallion data lakehouse on Databricks for a ride-hailing service, processing massive volumes of trips, city, and calendar data from AWS S3 to enable granular, city-level business intelligence and operational analytics across India. Implemented Databricks Auto Loader for streaming ingestion and Delta Live Tables (DLT) to orchestrate the pipeline, utilizing automated CDC (SCD Type 1) for trip updates, data quality expectations, and SQL-based Gold views for dimensional data modeling.",
     tech: ["Python", "Pyspark", "SQL", "Databricks", "AWS", "Delta Live Tables", "Delta Lake"],
     featured: false,
     githubUrl: "https://github.com/daya1an/transportation-data-lakehouse"
   },
   {
     title: "Sentiment Ledger",
-    description: "An AI-powered invoice approval system built with Spring Boot and Google Gemini. Invoices are submitted via a REST API, processed asynchronously through Kafka, and evaluated against company financial policies using RAG on MongoDB Atlas Vector Store. Decisions are recorded in an immutable audit ledger with idempotency guarantees.",
-    tech: ["Spring Boot", "Spring AI", "Google Gemini", "RAG", "KAFKA", "MongoDB Atlas"],
+    description: "An AI-powered invoice or subscription approval system that automates approve/reject/manual-review decisions using RAG-grounded LLM reasoning over financial policies, with full audit trail and idempotent payment execution using Razorpay. Implemented Kafka to decouple API latency from AI processing, used Redis for distributed locking MongoDB Atlas vector search for RAG so the AI grounds decisions in real policies, Resilience4j circuit breaker to stop hammering a failing payment service, and Prometheus for confidence-scored metrics to support compliance audits.",
+    tech: ["Spring Boot", "Spring AI", "Google Gemini", "RAG", "MCP", "Kafka", "MongoDB Atlas", "Stripe"],
     featured: false,
     githubUrl: "https://github.com/daya1an/sentiment-ledger"
   },
   {
     title: "My Portfolio Website",
-    description: "My personal portfolio is a fast, modern platform built to showcase my professional career, accelerated through vibe-coding with Lovable. Powered by React, TypeScript, Vite, Bun, Tailwind, and PrimeReact, it features a decoupled architecture where all content is isolated in src/data/ for effortless updates. The design merges a sleek, minimalistic black-and-white layout with custom minimalistic accents, delivering a unique yet professional outlook and   experience.",
-    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "PrimeReact"],
-    featured: true,
+    description: "A modern, responsive personal portfolio website built with React, TypeScript, and Vite, delivering a fast and polished frontend experience. The project combines Lovable for rapid design iteration with Tailwind CSS and PrimeReact to create a sleek, professional interface. Its content-driven architecture separates portfolio data from presentation, enabling simple updates and maintenance. Integrated email functionality supports direct contact, while GitHub Actions and Node.js 24.11.0 enable automated deployment and streamlined version-controlled releases.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "PrimeReact", "GitHub Actions", "Node.js"],
+    featured: false,
     githubUrl: "https://github.com/daya1an/portfolio"
   },
   {

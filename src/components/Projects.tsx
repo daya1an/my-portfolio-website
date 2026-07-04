@@ -8,7 +8,11 @@ import { Tag } from "primereact/tag";
 
 const Projects: React.FC = () => {
   return (
-    <SectionContainer id="projects" title="Personal Projects" subtitle="Personal and side projects.">
+    <SectionContainer
+      id="projects"
+      title="Personal Projects"
+      subtitle="Personal and side projects."
+    >
       <div className="grid md:grid-cols-2 gap-6">
         {projectsData.map((project, i) => (
           <motion.div
@@ -16,7 +20,11 @@ const Projects: React.FC = () => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.08, duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{
+              delay: i * 0.08,
+              duration: 0.4,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
           >
             <Card className="h-full !p-0 hover:shadow-md transition-shadow duration-300">
               <div className="p-5 md:p-6 flex flex-col h-full">
@@ -28,12 +36,27 @@ const Projects: React.FC = () => {
                 <h3 className="text-base font-semibold text-foreground mb-2">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 flex-1 leading-relaxed">
+                <p className="text-muted-foreground text-sm mb-4 flex-1 leading-relaxed text-justify">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tech.map((t) => (
-                    <Tag key={t} value={t} className="!px-2 !py-0.5" />
+                  {project.tech.map((t, index) => (
+                    <motion.span
+                      key={t}
+                      initial={{ opacity: 0.75, scale: 0.96 }}
+                      animate={{
+                        opacity: [0.75, 1, 0.75],
+                        scale: [0.96, 1, 0.96],
+                      }}
+                      transition={{
+                        duration: 1.4,
+                        repeat: Infinity,
+                        delay: index * 0.08,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      <Tag value={t} className="!px-2 !py-0.5" />
+                    </motion.span>
                   ))}
                 </div>
                 <div className="flex gap-4">
