@@ -11,11 +11,11 @@ export const profileData = {
     "Passionate about advancing into large-scale, real-time product engineering across domains like Banking, Fintech, Payments, and Data and AI, while building deeper expertise in AI/ML integration, and Big Data technologies."
   ],
   stats: [
-    { label: "Years of Experience", value: "Three" }, 
+    { label: "Years of Experience", value: "3+" }, 
     { label: "Core Tech", value: "Spring, React, Angular" }, 
-    { label: "Domains", value: " Logistics, Catalog, E-Commerce" }, 
-    { label: "Data & AI", value: "ETL, Spark, AI Integration" }, 
+    { label: "Domains", value: "Ecommerce,    Logistics, Catalog" }, 
+    { label: "Cloud", value: "AWS, GCP,  OpenShift,  PCF" }, 
   ],
-  resumeUrl: "https://1drv.ms/b/c/cacf8625b8119cb8/IQDq6Xa0BVp_Rb7tNGVCKta9ATDsawVci2U8mnNK666_3cw?e=etGt2b",
+  resumeUrl: "https://1drv.ms/b/c/cacf8625b8119cb8/IQAvufK1EYePTJjYJYNNuMDVAVo6lYOqx-JMnDltHs8Zqro?e=4E3ZEl",
   avatarUrl: "https://raw.githubusercontent.com/daya1an/portfolio/main/assets/profile-picture.png",
 };

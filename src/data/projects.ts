@@ -19,9 +19,16 @@ export const projectsData: Project[] = [
   {
     title: "ECOMMERCE MEDALLION LAKEHOUSE",
     description: "An ecommerce data engineering project on Databricks using the Medallion Architecture (Bronze → Silver → Gold). Raw CSV data across brands, products, customers, calendar, and order items is ingested and transformed across layered PySpark notebooks, producing BI-ready Delta tables with derived metrics (FX conversion, region enrichment, coupon flags).",
-    tech: ["Python", "Pyspark", "Databricks", "AWS S3", "Power BI"],
+    tech: ["Python", "Pyspark","SQL", "Databricks", "AWS S3", "Power BI"],
     featured: true,
     githubUrl: "https://github.com/daya1an/ecommerce-medallion-lakehouse"
+  },
+  {
+    title: "Transportation Data Lakehouse",
+    description: "- A scalable Medallion data lakehouse on Databricks for a ride-hailing service, processing massive volumes of trips, city, and calendar data from AWS S3 to enable granular, city-level business intelligence and operational analytics across India.",
+    tech: ["Python", "Pyspark", "SQL", "Databricks", "AWS", "Delta Live Tables", "Delta Lake"],
+    featured: false,
+    githubUrl: "https://github.com/daya1an/transportation-data-lakehouse"
   },
   {
     title: "Sentiment Ledger",
@@ -37,4 +44,11 @@ export const projectsData: Project[] = [
     featured: true,
     githubUrl: "https://github.com/daya1an/portfolio"
   },
+  {
+    title: "Event Announcement System",
+    description: "Serverless event notification platform where users subscribe by email and admins publish events that automatically alert all subscribers, removing manual mailing list upkeep. Used Lambda to avoid idle server costs, SNS for native email fan-out instead of a custom notifier, S3 for cheap static hosting, CloudFront for fast HTTPS delivery, and Terraform to make infra reproducible in one command.",
+    tech: ["Python", "HTML", "CSS", "JavaScript","Terraform", "AWS – Lambda, SNS, S3, & CloudFront"],
+    featured: false,
+    githubUrl: "https://github.com/daya1an/event-announcement-system"
+  }
 ];

@@ -51,9 +51,9 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center px-4 py-20 pb-24 sm:px-6 md:px-8 md:py-24 md:pb-28"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 py-16 md:px-8 md:py-20"
     >
-      <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center gap-12 pb-16 lg:flex-row lg:items-center lg:gap-20 lg:pb-20">
+      <div className="relative max-w-5xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,35 +94,19 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex flex-col items-center gap-4 lg:items-start w-full"
           >
-            <div className="flex w-full gap-3">
-              <motion.a
-                href={profileData.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-                whileHover={{ scale: 1.02, y: -2, boxShadow: "0 10px 25px rgba(0,0,0,0.15)" }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="inline-flex flex-1 items-center justify-center gap-2 px-6 py-3 text-sm font-medium bg-foreground text-background rounded-md hover:opacity-90 active:opacity-80 transition-all duration-200"
-              >
-                <Download size={16} />
-                <span>Get my Resume</span>
-              </motion.a>
-              <motion.button
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.96 }}
-                transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                className="inline-flex flex-1 items-center justify-center gap-2 px-6 py-3 text-sm font-medium border border-border text-foreground rounded-md hover:bg-muted transition-colors duration-200"
-              >
-                <Mail size={16} />
-                <span>Contact Me</span>
-              </motion.button>
-            </div>
+            <motion.a
+              href={profileData.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              whileHover={{ scale: 1.02, y: -2, boxShadow: "0 10px 25px rgba(0,0,0,0.15)" }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              className="inline-flex w-full items-center justify-center gap-2 px-6 py-3 text-sm font-medium bg-foreground text-background rounded-md hover:opacity-90 active:opacity-80 transition-all duration-200"
+            >
+              <Download size={16} />
+              <span>Get my Resume</span>
+            </motion.a>
 
             <div className="flex items-center justify-between gap-3 w-full">
               {socialLinks.map(({ platform, url }, index) => (
@@ -201,7 +185,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: revealedStep >= 4 ? 1 : 0 }}
         transition={{ delay: 0.2 }}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-6 md:bottom-8"
+        className="mt-10 lg:mt-14"
       >
         <a
           href="#about"

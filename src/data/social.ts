@@ -11,7 +11,7 @@ export const socialData = {
 
 export const contactData = {
   heading: "READY TO CONNECT?",
-  subheading: "Let's build something legendary together",
+  subheading: "Let's build something innovative together",
   email: "dayalands2210@gmail.com",
   ctaText: "SEND MESSAGE",
 };

@@ -29,11 +29,11 @@ const Experience: React.FC = () => {
       <p className="text-xs tracking-wide uppercase text-muted-foreground font-medium mb-3">
         {item.company}
       </p>
-      <p className="text-muted-foreground text-sm mb-3 leading-relaxed">{item.description}</p>
+      <p className="text-muted-foreground text-xs mb-3 leading-relaxed italic">{item.description}</p>
       {item.highlights && item.highlights.length > 0 && (
         <ul className="space-y-1.5 mb-4">
           {item.highlights.map((h, idx) => (
-            <li key={idx} className="text-muted-foreground text-xs leading-relaxed flex gap-2">
+            <li key={idx} className="text-muted-foreground text-xs leading-relaxed flex gap-2 text-justify">
               <span className="text-foreground/40 mt-0.5 shrink-0">—</span>
               {h}
             </li>
