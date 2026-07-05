@@ -27,14 +27,14 @@ export const projectsData: Project[] = [
     title: "Transportation Data Lakehouse",
     description: "A scalable Medallion data lakehouse on Databricks for a ride-hailing service, processing massive volumes of trips, city, and calendar data from AWS S3 to enable granular, city-level business intelligence and operational analytics across India. Implemented Databricks Auto Loader for streaming ingestion and Delta Live Tables (DLT) to orchestrate the pipeline, utilizing automated CDC (SCD Type 1) for trip updates, data quality expectations, and SQL-based Gold views for dimensional data modeling.",
     tech: ["Python", "Pyspark", "SQL", "Databricks", "AWS", "Delta Live Tables", "Delta Lake"],
-    featured: false,
+    featured: true,
     githubUrl: "https://github.com/daya1an/transportation-data-lakehouse"
   },
   {
     title: "Sentiment Ledger",
-    description: "An AI-powered invoice or subscription approval system that automates approve/reject/manual-review decisions using RAG-grounded LLM reasoning over financial policies, with full audit trail and idempotent payment execution using Razorpay. Implemented Kafka to decouple API latency from AI processing, used Redis for distributed locking MongoDB Atlas vector search for RAG so the AI grounds decisions in real policies, Resilience4j circuit breaker to stop hammering a failing payment service, and Prometheus for confidence-scored metrics to support compliance audits.",
+    description: "An AI-powered invoice or subscription approval system that automates approve/reject/manual-review decisions using RAG-grounded LLM reasoning over financial policies, with full audit trail and Stripe powered idempotent payment execution using Redis SETNX locks. Implemented Kafka to decouple API latency from AI processing, used Redis for distributed locking MongoDB Atlas vector search for RAG so the AI grounds decisions in real policies, Resilience4j circuit breaker to stop hammering a failing payment service, and Prometheus for confidence-scored metrics to support compliance audits.",
     tech: ["Spring Boot", "Spring AI", "Google Gemini", "RAG", "MCP", "Kafka", "MongoDB Atlas", "Stripe"],
-    featured: false,
+    featured: true,
     githubUrl: "https://github.com/daya1an/sentiment-ledger"
   },
   {
