@@ -16,13 +16,12 @@ export const experienceData: Experience[] = [
     description:
       "Base - Mainframe application, birth place of Ford Engineering and Service Parts Details. Functioning as SME for the Modernized Part of this Application.",
     highlights: [
-      "Developing APIs serving multiple internal applications, supporting enterprise reporting infrastructure and audit requirements at sub-100ms latency.",
-      "Maintaining ETL jobs ingesting multi-format files from enterprise platforms into GCS, generating mainframe-readable outputs of 10K+ records per run.",
-      "Leveraged GCS Buckets for I/O files management and optimized SFTP transfers with email notifications, surpassing mainframe capabilities.",
-      "Provisioned GCP Cloud Run and Cloud Scheduler with Terraform, enabling fully automated daily batch processing with zero manual intervention.",
-      "Delivered numerous frontend features in Agile sprints using React and Redux, partnering with Business owners on requirement scoping to reduce time-to-release and improve user experience.",
-      "Resolved multiple critical backend bugs and business logic issues in Spring Boot and BigQuery Dataform stored procedures, collaborating with Project managers to validate requirements and gain functional knowledge.",
-      "Resolved Tekton PAC pipeline failures and leading migration to GitHub Actions, improving CI/CD reliability and pipeline scalability.",
+      "Developed high‑performance APIs serving 25+ applications at sub‑100ms latency, applying advanced tuning with Spring Cloud, Spring Data, and Elasticsearch to deliver lightning‑fast search and responsiveness.",
+      "Fixed critical bugs in Dataform ETL stored procedures, improving data quality and ensuring seamless transformation of mainframe datasets into BigQuery tables that reliably feed downstream APIs.",
+      "Implemented ETL jobs with GCS buckets for efficient I/O file management and optimized SFTP transfers with automated email notifications, surpassing legacy mainframe capabilities in speed and reliability.",
+      "Automated ETL workflows on GCP using Cloud Run and Scheduler orchestrated via Terraform, enabling consistent daily batch processing while reducing operational overhead and manual intervention.",
+      "Delivered 20+ features across Agile sprints by collaborating directly with product owners on requirement scoping, accelerating time‑to‑release and improving stakeholder alignment.",
+      "Resolved Tekton pipeline failures, migrated CI/CD to GitHub Actions, remediated SAST vulnerabilities, and cut release cycles by 50%, significantly boosting reliability, security, and deployment speed.",
     ],
     tech: [
       "React",
@@ -70,12 +69,12 @@ export const experienceData: Experience[] = [
     description:
       "An application used to seek Exemptions approvals and track Trademark compliance, which connects Global Analysts and Supervisors, to raise Requests, Proposals, and Approvals. Modernized this legacy application by rebuilding UI, optimizing data handling, enforcing security standards, and delivering resilient APIs with enterprise compliance.",
     highlights: [
-      "Rebuilt legacy UI with reusable React components, custom hooks, Context API and wrapper classes, reducing cross-team UI development effort by 25%.",
-      "Implemented DB-driven dropdowns and dynamic tables with robust input validation, improving data load efficiency for large-volume datasets.",
-      "Enforced PII/SPII compliance using AES-GCM encryption and secure data handling across all sensitive data flows, meeting enterprise security standards.",
-      "Built APIs applying SDD, DDD and SOLID principles with Redis caching and optimized queries, reducing response time for data-heavy operations by 30%.",
-      "Adopted TDD with JUnit, Mockito, and GitHub Copilot, increasing test coverage by 30% and validating complex business logic and edge cases.",
-      "Remediated 50+ security vulnerabilities flagged by 42Crunch, SonarQube, Fossa, and Cycode, achieving maximum enterprise security standards.",
+      "Rewrote legacy UI, cutting load time 50% by building reusable React components with custom hooks, wrapper classes, and Context API, applying BDD practices for maintainability.",
+      "Built MongoDB‑driven dropdowns, tree views, and virtualized tables with server‑side caching, improving efficiency and scalability for large‑volume datasets.",
+      "Implemented Elasticsearch for global search across requests, design guides, and proposals, enabling autocomplete and multi‑field filtering for faster discovery.",
+      "Enforced AES‑GCM encryption for PII/SPII data sensitivity and remediated 60+ OWASP issues, achieving full compliance with SAST & DAST security tools.",
+      "Developed APIs applying SOLID principles, DDD, and BDD, with Redis‑based distributed caching, pagination, rate limiting, and query optimization for high‑performance services.",
+      "Built comprehensive test suites, leveraging GitHub Copilot to validate complex logic and edge cases using Jest (frontend) and JUnit (backend), achieving 100% coverage.",
     ],
     tech: [
       "React",
@@ -97,15 +96,14 @@ export const experienceData: Experience[] = [
     description:
       "An Inventory Management System that retrieves part details from Parts Control, allows users to catalog them, and distributes the information to multiple downstream systems. Enhanced application's modules by delivering new features, building resilient APIs, strengthening authentication, and streamlining CI/CD for performance and security.",
     highlights: [
-      "Developed responsive web pages with lazy loading, breadcrumb navigation, and authorization strategies, improving load efficiency and user access control.",
-      "Built Angular components including dynamic tables, tree views, and pop-ups, delivering intuitive UI and seamless user interactions.",
-      "Built reusable shared modules encapsulating complex business-critical logic, extending capabilities beyond the legacy application.",
-      "Delivered ACID-compliant REST APIs using Spring Web, Data, MVC, and Security, ensuring consistency across CRUD operations.",
-      "Built event-driven APIs with MQ integration, ensuring reliable message persistence and decoupling services for independent scalability.",
-      "Implemented Redis-backed JWT caching for Entra ID OIDC, cutting auth latency by 50% with token expiry and revocation enforcement.",
-      "Enabled pre-authorized service-to-service communication via Spring Cloud across distributed microservices, reducing auth overhead and code duplication.",
-      "Resolved Apigee file transfer limitation by architecting a GCS bucket solution with signed URLs, enabling secure access for large files."
-      ],
+      "Built Angular components including dynamic tables, tree views, and pop‑ups, delivering intuitive UI and extending capabilities beyond the legacy system.",
+      "Implemented responsive web pages with lazy loading, breadcrumbs, and authorization, leveraging RxJS for input validation against malformed data.",
+      "Developed multi‑tiered REST APIs with ACID‑compliant ORM services using Spring Data JPA & Hibernate, ensuring transactional consistency and reliability.",
+      "Engineered microservices with Kafka and data aggregation services, enabling reliable asynchronous messaging and scalable, decoupled architectures.",
+      "Optimized identity management via Redis‑backed JWT caching with cache invalidation strategies for Entra ID OIDC, cutting authentication latency by 65%.",
+      "Enabled pre‑authorized communication via Spring Cloud across 10 microservices with Gradle BOM, reducing version conflicts and simplifying upgrades.",
+      "Resolved APIGEE file transfer limitations by architecting a GCS bucket solution with signed URLs, enabling secure access for large files.",
+    ],
     tech: [
       "Angular",
       "TypeScript",
@@ -127,12 +125,13 @@ export const experienceData: Experience[] = [
     description:
       "Global Application for creating and managing packaging and logistics specifications of Engineering and Service Parts. Modernized legacy infrastructure by upgrading codebase, migrating workloads to OpenShift, strengthening API security, and optimizing batch operations with enterprise standards.",
     highlights: [
-      "Migrated Legacy WAS Liberty application to Red Hat OpenShift, eliminating AWS S3 and SMB-NAS dependencies by relocating storage to PVC and migrating artifacts from Nexus and local jars to JFrog Artifactory.",
-      "Shifted build system from Ant to Gradle and enabled Tekton PAC pipelines, reducing deployment complexity and time significantly.",
-      "Deployed APIs and batch jobs on OpenShift using Deployments, Services, Ingress, Egress, Routes, and Secrets while enforcing Kyverno policy compliance.",
-      "Developed Dockerfiles and integrated Dynatrace and Splunk via sidecar containers, enabling comprehensive observability during load and performance testing.",
-      "Strengthened release governance and security via CI/CD, DevSecOps controls, auth enforcement, and Apigee-managed APIs consumed by multiple enterprise applications.",
-      "Led reverse KT sessions mentoring team members on workloads, CronJob scheduling, SSL/DNS mapping, Promethoeus rules and alerts for batch jobs and APIs, reducing SPOC dependencies for OpenShift operations.",
+      "Migrated legacy monolithic application and 10+ microservices from AWS to OpenShift Kubernetes, enhancing reliability, scalability, and deployment efficiency.",
+      "Unified region‑specific batch jobs into scheduled systems, ensuring cross‑regional consistency and distributed transactions in globally available platforms.",
+      "Shifted build system from Ant to Gradle and enabled Tekton PAC pipeline, improving operational stability and reducing deployment time by 50%.",
+      "Orchestrated workloads using Deployments, Services, Ingress, Egress, Routes, Prometheus, and Secrets, with load balancing and HPA for scalable performance.",
+      "Integrated Dynatrace and Splunk via sidecar containers for LnP testing, enabling proactive observability, root cause analysis, and reduced MTTR.",
+      "Strengthened release governance and security via CI/CD, DevSecOps, authentication controls, and Apigee for APIs consumed by multiple internal applications.",
+      "Led reverse KT sessions, mentoring team members on CronJob scheduling, SSL/DNS mapping, alerts, and rules for batch jobs and APIs.",
     ],
     tech: [
       "Java",

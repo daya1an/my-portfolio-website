@@ -36,14 +36,15 @@ export const skillsData: { categories: SkillCategory[] } = {
     {
       name: "Backend",
       skills: [
-        { name: "Spring Framework", icon: "auto", level: 80 },
-        { name: "Spring Boot", icon: "auto", level: 95 },
-        { name: "Spring Batch", icon: "auto", level: 88 },
-        { name: "Spring Data", icon: "auto", level: 88 },
+        { name: "Spring Boot", icon: "auto", level: 80 },
+        { name: "Spring Batch", icon: "auto", level: 80 },
+        { name: "Spring Data", icon: "auto", level: 80 },
         { name: "Spring Security", icon: "auto", level: 80 },
-        { name: "Spring GraphQL", icon: "auto", level: 75 },
-        { name: "RestFUL API", icon: "auto", level: 80 },
-        { name: "GraphQL", icon: "auto", level: 75 },
+        { name: "Spring AI", icon: "auto", level: 80 },
+        { name: "REST API", icon: "auto", level: 80 },
+        { name: "GraphQL", icon: "auto", level: 80 },
+        { name: "gRPC", icon: "auto", level: 80 },
+        { name: "WebSocket", icon: "auto", level: 80 }
 
       ],
     },
@@ -118,9 +119,10 @@ const deviconMap: Record<string, string> = {
   "Spring Batch": "springbatch.svg",
   "Spring Data": "springdata.svg",
   "Spring Security": "springsecurity.svg",
-  "Spring GraphQL": "springgraphql.svg",
-  "RestFUL API": "restapi.svg",
+  "REST API": "restapi.svg",
   "GraphQL": "graphql.svg",
+  "gRPC": "grpc.png",
+  "WebSocket": "websocket.png",
 
   "GCP": "gcp.svg",
   "AWS": "AWS.svg",
