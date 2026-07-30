@@ -62,7 +62,7 @@ export const skillsData: { categories: SkillCategory[] } = {
       ],
     },
     {
-      name: "Databases",
+      name: "Data Stores",
       skills: [
         { name: "PostgreSQL", icon: "auto", level: 88 },
         { name: "Microsoft SQL Server", icon: "auto", level: 85 },        
