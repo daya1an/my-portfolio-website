@@ -16,7 +16,7 @@ export const experienceData: Experience[] = [
     description:
       "Base - Mainframe application, birth place of Ford Engineering and Service Parts Details. Functioning as SME for the Modernized Part of this Application.",
     highlights: [
-      "Developed high‑performance APIs serving 25+ applications at sub‑100ms latency, applying advanced tuning with Spring Cloud, Spring Data, and Elasticsearch to deliver lightning‑fast search and responsiveness.",
+      "Architect and manage high-performance APIs consumed by 25+ internal applications, ensuring sub-second latency across the enterprise.",
       "Fixed critical bugs in Dataform ETL stored procedures, improving data quality and ensuring seamless transformation of mainframe datasets into BigQuery tables that reliably feed downstream APIs.",
       "Implemented ETL jobs with GCS buckets for efficient I/O file management and optimized SFTP transfers with automated email notifications, surpassing legacy mainframe capabilities in speed and reliability.",
       "Automated ETL workflows on GCP using Cloud Run and Scheduler orchestrated via Terraform, enabling consistent daily batch processing while reducing operational overhead and manual intervention.",
