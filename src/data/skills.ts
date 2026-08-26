@@ -56,13 +56,15 @@ export const skillsData: { categories: SkillCategory[] } = {
         { name: "AWS", icon: "auto", level: 75 },
         { name: "Kubernetes", icon: "auto", level: 78 },
         { name: "OpenShift", icon: "auto", level: 78 },
-        { name: "Kafka", icon: "auto", level: 82 },
         { name: "Redis", icon: "auto", level: 80 },
+        { name: "Elasticsearch", icon: "auto", level: 80 },
+        { name: "Kafka", icon: "auto", level: 82 },
+        { name: "Apache Spark", icon: "auto", level: 80 },
         { name: "Databricks", icon: "auto", level: 80 },
       ],
     },
     {
-      name: "Databases",
+      name: "Data Stores",
       skills: [
         { name: "PostgreSQL", icon: "auto", level: 88 },
         { name: "Microsoft SQL Server", icon: "auto", level: 85 },        
@@ -99,6 +101,8 @@ export const skillsData: { categories: SkillCategory[] } = {
 };
 
 const deviconMap: Record<string, string> = {
+
+  //Languages
   "Java": "java.svg",
   "Python": "python.svg",
   "TypeScript": "typescript.svg",
@@ -106,6 +110,7 @@ const deviconMap: Record<string, string> = {
   "SQL": "sql.svg",
   "C/C++": "cplusplus.svg",
 
+  //Frameworks and Libraries
   "React": "react.svg",
   "Angular": "angularjs.svg",
   "Redux": "redux.svg",
@@ -130,6 +135,8 @@ const deviconMap: Record<string, string> = {
   "OpenShift": "openshift.svg",
   "Kafka": "kafka.svg",
   "Redis": "redis.svg",
+  "Elasticsearch": "elasticsearch.png",
+  "Apache Spark": "spark.png",
   "Databricks": "databricks.svg",
 
   "PostgreSQL": "postgresql.svg",

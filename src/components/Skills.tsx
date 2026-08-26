@@ -35,7 +35,7 @@ const Skills: React.FC = () => {
               : "border-foreground/40 bg-transparent text-foreground hover:border-foreground hover:bg-foreground/5"
           }`}
         >
-          {revealAll ? "Switch it Off" : "Reveal All"}
+          {revealAll ? "Unreveal" : "Reveal All"}
         </motion.button>
       }
     >
