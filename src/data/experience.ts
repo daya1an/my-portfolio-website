@@ -16,22 +16,12 @@ export const experienceData: Experience[] = [
     description:
       "Base - Mainframe application, birth place of Ford Engineering and Service Parts Details. Functioning as SME for the Modernized Part of this Application.",
     highlights: [
-<<<<<<< HEAD
-      "Owned and maintained APIs serving 15+ downstream applications at low latency, tuning Spring Data and Elasticsearch queries to deliver fast, reliable search.",
-      "Delivered 20+ features while reducing release cycle time by 25%, driven by close product owner collaboration, end-user feedback loops, and AI-assisted development practices.",
-      "Refactored the Global Parts Lookup API to parallelize bulk retrieval using CompletableFuture and a dynamic thread pool, cutting response latency by 60%.",
-      "Debugged and fixed critical issues in Dataform SQLX scripts, improving data quality by 15% across mainframe-to-BigQuery transformation pipelines feeding downstream APIs.",
-      "Built ETL jobs with bucket-based I/O file management and optimized SFTP transfers with automated email notifications, ensuring 100% data consistency and auditability.",
-      "Architected and automated GCP Cloud Run and Scheduler workflows using Terraform, delivering reliable daily ETL jobs and reducing operational overhead.",
-      "Troubleshot recurring Tekton pipeline failures and migrated CI/CD to GitHub Actions with integrated SAST scanning, cutting deployment time by 50% and improving pipeline reliability and security.",
-=======
-      "Architect and manage high-performance APIs consumed by 25+ internal applications, ensuring sub-second latency across the enterprise.",
+      "Developed high‑performance APIs serving 25+ applications at sub‑100ms latency, applying advanced tuning with Spring Cloud, Spring Data, and Elasticsearch to deliver lightning‑fast search and responsiveness.",
       "Fixed critical bugs in Dataform ETL stored procedures, improving data quality and ensuring seamless transformation of mainframe datasets into BigQuery tables that reliably feed downstream APIs.",
       "Implemented ETL jobs with GCS buckets for efficient I/O file management and optimized SFTP transfers with automated email notifications, surpassing legacy mainframe capabilities in speed and reliability.",
       "Automated ETL workflows on GCP using Cloud Run and Scheduler orchestrated via Terraform, enabling consistent daily batch processing while reducing operational overhead and manual intervention.",
       "Delivered 20+ features across Agile sprints by collaborating directly with product owners on requirement scoping, accelerating time‑to‑release and improving stakeholder alignment.",
       "Resolved Tekton pipeline failures, migrated CI/CD to GitHub Actions, remediated SAST vulnerabilities, and cut release cycles by 50%, significantly boosting reliability, security, and deployment speed.",
->>>>>>> 7a8fc97f88d233f95c46dec77972f4eff2cf31b9
     ],
     tech: [
       "React",
