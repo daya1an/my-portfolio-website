@@ -6,38 +6,12 @@ import { skillsData, getIconUrl } from "../data/skills";
 const Skills: React.FC = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
-  const [activeSkills, setActiveSkills] = useState<string[]>([]);
-  const [revealAll, setRevealAll] = useState(false);
-
-  const handleSkillClick = (skillId: string) => {
-    setActiveSkills((prev) => (prev.includes(skillId) ? prev : [...prev, skillId]));
-  };
-
-  const toggleRevealAll = () => {
-    setRevealAll((prev) => !prev);
-  };
 
   return (
     <SectionContainer
       id="skills"
       title="Technical Skills"
       subtitle="Technologies & tools I work with. (Touch/Hover for details)"
-      headerAction={
-        <motion.button
-          type="button"
-          whileHover={{ scale: 1.02, y: -1 }}
-          whileTap={{ scale: 0.97 }}
-          transition={{ duration: 0.2, ease: "easeOut" }}
-          onClick={toggleRevealAll}
-          className={`rounded-lg border px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
-            revealAll
-              ? "border-foreground bg-foreground text-background shadow-sm"
-              : "border-foreground/40 bg-transparent text-foreground hover:border-foreground hover:bg-foreground/5"
-          }`}
-        >
-          {revealAll ? "Unreveal" : "Reveal All"}
-        </motion.button>
-      }
     >
       <div className="space-y-10">
         {skillsData.categories.map((category, catIdx) => (
@@ -53,65 +27,134 @@ const Skills: React.FC = () => {
               onMouseEnter={() => setHoveredCategory(category.name)}
               onMouseLeave={() => setHoveredCategory(null)}
             >
-              <span className={`transition-colors duration-300 ${
-                revealAll || hoveredCategory === category.name ? "text-foreground" : "text-muted-foreground"
-              }`}>
+              <span
+                className={`transition-colors duration-300 ${
+                  hoveredCategory === category.name ? "text-foreground" : "text-muted-foreground"
+                }`}
+              >
                 {category.name}
               </span>
               <span className="flex-1 h-px bg-border" />
             </h3>
 
             <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 lg:grid-cols-9 gap-4">
-              {category.skills.map((skill) => {
+              {category.skills.map((skill, skillIndex) => {
                 const skillId = `${category.name}-${skill.name}`;
                 const iconUrl = getIconUrl(skill);
                 const isHovered = hoveredSkill === skillId;
                 const isCategoryHovered = hoveredCategory === category.name;
-                const isActive = activeSkills.includes(skillId);
-                const showLabel = revealAll || isHovered || isCategoryHovered || isActive;
+                const showLabel = true;
+                const isActive = isHovered || isCategoryHovered;
 
                 return (
-                  <div
+                  <motion.div
                     key={skill.name}
+                    layout
+                    whileHover={{ y: -4, scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    animate={
+                      isActive
+                        ? { y: -4, scale: 1.03 }
+                        : {
+                            y: [0, -4, 0, -2, 0],
+                            scale: [1, 1.03, 1, 1.02, 1],
+                          }
+                    }
+                    transition={
+                      isActive
+                        ? { type: "spring", stiffness: 260, damping: 18 }
+                        : {
+                            duration: 2.6 + skillIndex * 0.13,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                            repeatType: "mirror",
+                            delay: skillIndex * 0.1,
+                          }
+                    }
                     className="flex flex-col items-center gap-2"
                     onMouseEnter={() => setHoveredSkill(skillId)}
                     onMouseLeave={() => setHoveredSkill(null)}
-                    onClick={() => handleSkillClick(skillId)}
                   >
-                    <div
-                      className={`relative w-12 h-12 md:w-14 md:h-14 rounded-lg border flex items-center justify-center transition-all duration-300 cursor-pointer ${
-                        showLabel
-                          ? "border-foreground/20 bg-muted scale-105"
-                          : "border-border bg-card hover:border-foreground/10 hover:bg-muted/50"
-                      }`}
+                    <motion.div
+                      animate={
+                        isActive
+                          ? {
+                              scale: 1.12,
+                              y: -4,
+                              rotate: 2.4,
+                              borderColor: "rgba(255,255,255,0.32)",
+                              backgroundColor: "rgba(148, 163, 184, 0.12)",
+                              boxShadow: "0 0 0 1px rgba(148,163,184,0.18), 0 16px 34px rgba(59,130,246,0.18)",
+                            }
+                          : {
+                              scale: [1, 1.08, 1.02, 1.1, 1],
+                              y: [0, -3, 0, -2, 0],
+                              rotate: [0, 1.2, 0, -1.2, 0],
+                              borderColor: ["rgba(255,255,255,0.08)", "rgba(148,163,184,0.24)", "rgba(255,255,255,0.08)", "rgba(148,163,184,0.18)", "rgba(255,255,255,0.08)"],
+                              backgroundColor: ["rgba(15, 23, 42, 0.08)", "rgba(59, 130, 246, 0.09)", "rgba(15, 23, 42, 0.08)", "rgba(96, 165, 250, 0.08)", "rgba(15, 23, 42, 0.08)"],
+                            }
+                      }
+                      transition={
+                        isActive
+                          ? { duration: 0.28, ease: "easeOut" }
+                          : {
+                              duration: 2.8 + skillIndex * 0.18,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              delay: skillIndex * 0.08,
+                            }
+                      }
+                      className="relative w-12 h-12 md:w-14 md:h-14 rounded-lg border flex items-center justify-center cursor-pointer"
                     >
-                      {iconUrl ? (
-                        <img
-                          src={iconUrl}
-                          alt={skill.name}
-                          className={`w-7 h-7 md:w-8 md:h-8 transition-all duration-300 ${
-                            showLabel ? "opacity-100 grayscale-0" : "opacity-60 grayscale"
-                          }`}
-                          loading="lazy"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = "none";
-                            (e.target as HTMLImageElement).nextElementSibling?.classList.remove("hidden");
-                          }}
-                        />
-                      ) : null}
-                      <span className={`text-xs font-semibold text-muted-foreground ${iconUrl ? "hidden" : ""}`}>
-                        {skill.name.slice(0, 2).toUpperCase()}
-                      </span>
-                    </div>
+                      <motion.div
+                        animate={{
+                          filter: isActive ? "brightness(1.12) saturate(1.15)" : "brightness(0.96) saturate(1)",
+                          opacity: showLabel ? 1 : 0.72,
+                        }}
+                        transition={{ duration: 0.25, ease: "easeOut" }}
+                        className="flex items-center justify-center"
+                      >
+                        {iconUrl ? (
+                          <img
+                            src={iconUrl}
+                            alt={skill.name}
+                            className="w-7 h-7 md:w-8 md:h-8 transition-all duration-300"
+                            loading="lazy"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = "none";
+                              (e.target as HTMLImageElement).nextElementSibling?.classList.remove("hidden");
+                            }}
+                          />
+                        ) : null}
+                        <span className={`text-xs font-semibold text-muted-foreground ${iconUrl ? "hidden" : ""}`}>
+                          {skill.name.slice(0, 2).toUpperCase()}
+                        </span>
+                      </motion.div>
+                    </motion.div>
 
-                    <span
-                      className={`text-[11px] text-center transition-all duration-300 font-medium ${
-                        showLabel ? "opacity-100 text-foreground" : "opacity-0 text-muted-foreground"
-                      }`}
+                    <motion.span
+                      initial={false}
+                      animate={{
+                        opacity: showLabel ? 1 : 1,
+                        y: isActive ? -2 : [0, -2.5, 0, -1.5, 0],
+                        color: isActive ? "var(--foreground)" : "var(--muted-foreground)",
+                        letterSpacing: isActive ? "0.06em" : "0",
+                      }}
+                      transition={
+                        isActive
+                          ? { duration: 0.25, ease: "easeOut" }
+                          : {
+                              duration: 2.6 + skillIndex * 0.14,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              delay: skillIndex * 0.09,
+                            }
+                      }
+                      className="text-[11px] text-center font-medium leading-tight"
                     >
                       {skill.name}
-                    </span>
-                  </div>
+                    </motion.span>
+                  </motion.div>
                 );
               })}
             </div>
